@@ -40,6 +40,22 @@ body {
     padding: 20px;
 }
 
+.container-mae-task{
+    display: flex;
+    flex-direction: row; /* Itens lado a lado (padrão) */
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.container-task{
+    background-color: var(--cor-principal);
+    width: 10vw;
+    font-family: monospace;
+    text-align: center;
+    
+}
+
+
 /* ===============================
    🎯 DESAFIO 3 (CSS)
    👉 Estilizar HEADER
@@ -102,3 +118,4 @@ body {
     text-decoration: line-through;
     opacity: 0.6;
 }
+
