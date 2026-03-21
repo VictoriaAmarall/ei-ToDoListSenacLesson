@@ -55,14 +55,13 @@ body {
     padding: 10px 30px;
     border-radius: 5px;
     box-shadow: 4.2px 5.5px 5.5px hsl(0deg 0% 0% / 0.37);
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and potential scale */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     background-color: #faf3f3;
 }
 
 .container-task:hover {
-  /* Larger, more prominent shadow on hover */
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4); 
-  transform: translateY(-5px); /* Optional: slight lift effect */
+  transform: translateY(-5px); 
 }
 .container-task p{
     padding: 10px;
@@ -76,7 +75,8 @@ body {
 .header {
     justify-items: center;
     text-align: center;
-    font-family: Arial;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
 }
 .titulo{
     display: flex;
@@ -88,7 +88,7 @@ body {
 }
 
 #icone{
-    width: 5vw;
+    width: 10vw;
     margin: 15px;
 }
 
