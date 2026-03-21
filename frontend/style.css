@@ -1,6 +1,7 @@
 /* ===============================
    RESET (PRONTO)
 =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Dancing+Script:wght@400..700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +16,8 @@
 
 =============================== */
 :root {
-  --cor-principal: #e665c5;
-  --cor-secundaria: hsl(281, 75%, 61%);
+  --cor-principal: #f591dca9;
+  --cor-secundaria: #721093;
 }
 
 /* ===============================
@@ -37,32 +38,58 @@ body {
 .container {
     width: 100%;
     max-width: 600px;
-    padding: 20px;
+    padding: 20px 60px;
+    background-color: #faf9f9;
+    border-radius: 15px;
 }
 
 .container-mae-task{
     display: flex;
-    flex-direction: row; /* Itens lado a lado (padrão) */
+    flex-direction: row; 
     flex-wrap: wrap;
     justify-content: space-around;
 
 }
 .container-task{
-    background-color: var(--cor-principal);
-    width: 10vw;
-    font-family: monospace;
     text-align: center;
-    
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 4.2px 5.5px 5.5px hsl(0deg 0% 0% / 0.37);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and potential scale */
+    background-color: #faf3f3;
 }
 
-
+.container-task:hover {
+  /* Larger, more prominent shadow on hover */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4); 
+  transform: translateY(-5px); /* Optional: slight lift effect */
+}
+.container-task p{
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 /* ===============================
    🎯 DESAFIO 3 (CSS)
    👉 Estilizar HEADER
 =============================== */
 .header {
+    justify-items: center;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Arial;
+}
+.titulo{
+    display: flex;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+    color: var(--cor-secundaria);
+    font-size: 30px;
+    
+}
+
+#icone{
+    width: 5vw;
+    margin: 15px;
 }
 
 /* ===============================
