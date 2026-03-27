@@ -2,147 +2,177 @@
    RESET (PRONTO)
 =============================== */
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Dancing+Script:wght@400..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-/*    font-family: 'Roboto Mono', monospace;*/
 }
 
-/* ===============================
-   🎯 DESAFIO 2 (CSS)
-   👉 Criar variáveis de cor
-
-
-=============================== */
+/* CORES */
 :root {
-  --cor-principal: #f591dca9;
+  --cor-principal: #f8d7da;
   --cor-secundaria: #721093;
 }
 
-/* ===============================
-   BODY (PRONTO)
-=============================== */
+/* BODY */
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     padding: 40px 20px;
 
-    /* TODO: adicionar background bonito */
+    background: linear-gradient(135deg, #2f3e46, #0f2027);
+    font-family: 'Segoe UI', sans-serif;
+    color: #eee;
 }
 
-/* ===============================
-   CONTAINER (BASE PRONTA)
-=============================== */
+/* CONTAINER */
 .container {
     width: 100%;
     max-width: 600px;
-    padding: 20px 60px;
-    background-color: #faf9f9;
-    border-radius: 15px;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
 }
 
-.container-mae-task{
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-}
-.container-task{
-    text-align: center;
-    padding: 10px 30px;
-    border-radius: 5px;
-    box-shadow: 4.2px 5.5px 5.5px hsl(0deg 0% 0% / 0.37);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    background-color: #faf3f3;
-}
-
-.container-task:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4); 
-  transform: translateY(-5px); 
-}
-.container-task p{
-    padding: 10px;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-/* ===============================
-   🎯 DESAFIO 3 (CSS)
-   👉 Estilizar HEADER
-=============================== */
+/* HEADER */
 .header {
-    justify-items: center;
     text-align: center;
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
 }
-.titulo{
+
+.titulo {
     display: flex;
+    justify-content: center;
     align-items: center;
-    font-family: "Dancing Script", cursive;
-    color: var(--cor-secundaria);
-    font-size: 30px;
-    
 }
 
-#icone{
-    width: 10vw;
-    margin: 15px;
+.titulo h1 {
+    font-size: 60px;
+    font-weight: 300;
+    color: var(--cor-principal);
 }
 
-/* ===============================
-   🎯 DESAFIO 4 (CSS)
-   👉 Criar layout dos CARDS
-=============================== */
+#icone {
+    display: none;
+}
+
+.header p {
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+/* STATS (ocultado para estilo minimalista) */
 .stats {
-    margin: 20px 0;
+    display: none;
 }
 
-/* ===============================
-   ADD TASK (BASE)
-=============================== */
+/* ADD TASK */
 .add-task {
     display: flex;
     gap: 10px;
+    margin-top: 30px;
 }
 
 .add-task input {
     flex: 1;
-    padding: 10px;
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+
+    background: #111;
+    color: #eee;
 }
 
 .btn-add {
+    background: var(--cor-principal);
+    color: #111;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
-/* ===============================
-   🎯 DESAFIO 5 (CSS)
-   👉 Estilizar filtros
-=============================== */
+.btn-add:hover {
+    opacity: 0.8;
+}
+
+/* FILTROS */
 .filters {
-    margin: 20px 0;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
-/* ===============================
-   🎯 DESAFIO 6 (CSS)
-   👉 Estilizar tarefas
-=============================== */
+.filter {
+    background: transparent;
+    border: 1px solid #aaa;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter:hover {
+    border-color: #fff;
+}
+
+.filter.active {
+    background: var(--cor-principal);
+    color: #111;
+    border: none;
+}
+
+/* TASKS */
 .tasks {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/* TASK ITEM */
 .task {
-    padding: 10px;
-    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 15px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.08);
+    transition: 0.2s;
 }
 
-/* Classe importante (JS usa!) */
+.task:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* TEXTO COMPLETO */
 .completed {
     text-decoration: line-through;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
+/* BOTÕES DENTRO DA TASK */
+.task button {
+    background: none;
+    border: none;
+    color: #eee;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.task button:hover {
+    color: var(--cor-principal);
+}
