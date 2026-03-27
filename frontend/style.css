@@ -21,9 +21,8 @@ body {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
-
-    background: linear-gradient(135deg, #2f3e46, #0f2027);
-    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #2f3e46, #0f2027); /* Gradiente radial dá mais profundidade */
+    font-family: 'Roboto Mono', monospace; /* Fonte mais moderna para apps de lista */
     color: #eee;
 }
 
@@ -33,11 +32,53 @@ body {
     max-width: 600px;
     padding: 30px;
     border-radius: 20px;
-
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-
     box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.container-mae-task {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.container-task {
+    flex: 1;
+    padding: 15px 10px;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+
+    text-align: center;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s;
+}
+
+/* Hover suave */
+.container-task:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Número */
+.container-task p:first-child {
+    font-family: 'Bungee', cursive; /* Números com fonte de destaque */
+    font-size: 32px;
+    color: var(--cor-principal);
+    line-height: 1;
+}
+
+/* Texto de legenda */
+.container-task p:last-child {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.6;
 }
 
 /* HEADER */
@@ -52,11 +93,12 @@ body {
 }
 
 .titulo h1 {
-    font-size: 60px;
-    font-weight: 300;
+    font-family: 'Bungee', cursive; /* Título com impacto */
+    font-size: 40px; 
+    letter-spacing: -1px;
     color: var(--cor-principal);
+    text-shadow: 0 10px 20px rgba(248, 215, 218, 0.2);
 }
-
 #icone {
     display: none;
 }
@@ -67,9 +109,6 @@ body {
 }
 
 /* STATS (ocultado para estilo minimalista) */
-.stats {
-    display: none;
-}
 
 /* ADD TASK */
 .add-task {
@@ -80,55 +119,86 @@ body {
 
 .add-task input {
     flex: 1;
-    padding: 12px 15px;
-    border-radius: 20px;
-    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     outline: none;
+    background: rgba(255, 255, 255, 0.05); /* Leve transparência */
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    transition: 0.3s;
+}
 
-    background: #111;
-    color: #eee;
+.add-task input:focus {
+    border-color: var(--cor-principal);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(248, 215, 218, 0.1);
 }
 
 .btn-add {
     background: var(--cor-principal);
     color: #111;
     border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 12px 25px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: 0.2s;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    
+    /* Efeito de elevação */
+    box-shadow: 0 4px 15px rgba(248, 215, 218, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .btn-add:hover {
-    opacity: 0.8;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(248, 215, 218, 0.5);
+    filter: brightness(1.1);
 }
 
+.btn-add:active {
+    transform: translateY(0) scale(0.95);
+}
 /* FILTROS */
 .filters {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    background: rgba(0, 0, 0, 0.2); /* Fundo sutil para agrupar os botões */
+    padding: 5px;
+    border-radius: 15px;
+    gap: 5px;
 }
 
 .filter {
+    flex: 1;
     background: transparent;
-    border: 1px solid #aaa;
-    color: #eee;
-    padding: 5px 10px;
-    border-radius: 10px;
+    border: none;
+    color: rgba(255, 255, 255, 0.5); /* Cor mais discreta para os inativos */
+    padding: 10px 5px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: 0.2s;
+    
+    /* AJUSTES DE FONTE */
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;      /* Um pouco mais de "corpo" */
+    text-transform: uppercase; /* Deixa o visual mais moderno/UI */
+    letter-spacing: 0.5px; /* Espaçamento para facilitar a leitura */
+    
+    transition: all 0.3s ease;
 }
 
 .filter:hover {
-    border-color: #fff;
+    color: #fff;
 }
 
 .filter.active {
     background: var(--cor-principal);
     color: #111;
-    border: none;
+    font-weight: 700; /* Negrito apenas no ativo para dar destaque */
+    box-shadow: 0 4px 15px rgba(248, 215, 218, 0.2);
 }
 
 /* TASKS */
