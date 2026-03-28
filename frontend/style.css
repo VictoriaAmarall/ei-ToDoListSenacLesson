@@ -11,7 +11,7 @@
 
 /* CORES */
 :root {
-  --cor-principal: #f8d7da;
+  --cor-principal: #c7a6f1;
   --cor-secundaria: #721093;
 }
 
@@ -47,14 +47,10 @@ body {
     flex: 1;
     padding: 15px 10px;
     border-radius: 15px;
-
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(8px);
-
     text-align: center;
-
     border: 1px solid rgba(255,255,255,0.08);
-
     transition: 0.3s;
 }
 
@@ -69,7 +65,7 @@ body {
     font-family: 'Bungee', cursive; /* Números com fonte de destaque */
     font-size: 32px;
     color: var(--cor-principal);
-    line-height: 1;
+    line-height: 2;
 }
 
 /* Texto de legenda */
@@ -108,7 +104,6 @@ body {
     margin-top: 10px;
 }
 
-/* STATS (ocultado para estilo minimalista) */
 
 /* ADD TASK */
 .add-task {
